@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { FormFields } from './InputForm'
 import Report from './Report'
 
@@ -26,10 +26,22 @@ const DEFAULT_TOGGLES = {
   arbitrage: true,
 }
 
+function load(key, defaults) {
+  try {
+    const saved = JSON.parse(localStorage.getItem(key))
+    return saved ? { ...defaults, ...saved } : defaults
+  } catch {
+    return defaults
+  }
+}
+
 export default function App() {
-  const [inputs, setInputs] = useState(DEFAULTS)
-  const [toggles, setToggles] = useState(DEFAULT_TOGGLES)
+  const [inputs, setInputs] = useState(() => load('dr-inputs', DEFAULTS))
+  const [toggles, setToggles] = useState(() => load('dr-toggles', DEFAULT_TOGGLES))
   const [sidebarOpen, setSidebarOpen] = useState(false)
+
+  useEffect(() => { localStorage.setItem('dr-inputs', JSON.stringify(inputs)) }, [inputs])
+  useEffect(() => { localStorage.setItem('dr-toggles', JSON.stringify(toggles)) }, [toggles])
 
   function handleChange(name, value) {
     setInputs(prev => ({ ...prev, [name]: value }))

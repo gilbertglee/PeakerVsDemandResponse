@@ -59,11 +59,11 @@ export default function Report({ inputs, toggles = {}, onToggle, onBack, embedde
       </div>
 
       <div className="chips">
-        <span className="chip"><strong>{capacity_mw} MW</strong> capacity</span>
-        <span className="chip-blue"><strong>{peaker_utilization_pct}% utilization</strong> &mdash; sourced below</span>
-        <span className="chip">Peaker O&amp;M <strong>~{fmt.format(peaker_om_per_mwh)}/MWh</strong></span>
-        <span className="chip">DR cost <strong>{fmt.format(dr_cost_per_kw_yr)}/kW-yr</strong></span>
-        <span className="chip">Timeframe <strong>{timeframe_years} years</strong></span>
+        <span className="chip-purple"><strong>{capacity_mw} MW</strong> capacity</span>
+        <span className="chip-blue"><strong>{peaker_utilization_pct}% utilization</strong></span>
+        <span className="chip-orange">Peaker O&amp;M <strong>~{fmt.format(peaker_om_per_mwh)}/MWh</strong></span>
+        <span className="chip-green">DR cost <strong>{fmt.format(dr_cost_per_kw_yr)}/kW-yr</strong></span>
+        <span className="chip-amber">Timeframe <strong>{timeframe_years} years</strong></span>
       </div>
 
       <div className="table-card">

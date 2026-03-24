@@ -110,7 +110,7 @@ function FormFields({ inputs, onChange, toggles, onToggle }) {
           {onToggle && <SectionToggle checked={t.ancillary} onChange={() => onToggle('ancillary')} />}
         </div>
         <div className="form-grid">
-          <Field label="Annual rate per MW" name="ancillary_per_mw_yr" value={inputs.ancillary_per_mw_yr} unit="$/MW-yr" onChange={handleChange} hint="Frequency regulation revenue; batteries qualify due to sub-second response" />
+          <Field label="Annual rate per MW" name="ancillary_per_mw_yr" value={inputs.ancillary_per_mw_yr} unit="$/MW-yr" onChange={handleChange} hint="Frequency regulation revenue; batteries qualify due to sub-second response. Typical U.S. rates range from $25,000–$60,000/MW-yr. Default of $40,000 reflects a mid-range estimate across PJM, CAISO, and ERCOT markets." />
         </div>
       </div>
 

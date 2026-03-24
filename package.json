@@ -1,0 +1,19 @@
+{
+  "name": "peakervsdemandresponse",
+  "version": "1.0.0",
+  "description": "A React calculator app that compares the total cost of building a gas peaker plant vs. deploying a Wattsmart demand response battery program.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "vite": "^8.0.2"
+  }
+}
